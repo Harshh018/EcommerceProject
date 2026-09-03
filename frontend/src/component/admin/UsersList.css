@@ -1,0 +1,73 @@
+.productListContainer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  border-left: 1px solid rgba(0, 0, 0, 0.158);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#productListHeading {
+  font: 400 2rem "Roboto";
+  padding: 0.5rem;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.637);
+  transition: all 0.5s;
+  margin: 2rem;
+  text-align: center;
+}
+
+.productListTable {
+  background-color: white;
+  border: none !important;
+}
+
+.productListTable div {
+  font: 300 1vmax "Roboto";
+  color: rgba(0, 0, 0, 0.678);
+  border: none !important;
+}
+
+.productListTable .MuiDataGrid-columnHeaderTitle {
+  font: 500 1.1vmax "Roboto";
+  color: rgba(0, 0, 0, 0.815);
+}
+
+.productListTable .MuiDataGrid-iconSeparator {
+  display: none !important;
+}
+
+.productListTable a,
+.productListTable button {
+  color: rgba(0, 0, 0, 0.521);
+  transition: all 0.5s;
+}
+
+.productListTable a:hover {
+  color: tomato;
+}
+
+.productListTable button:hover {
+  color: red;
+}
+
+/* Green role text for Admin */
+.greenColor {
+  color: green !important;
+}
+
+/* Red role text for User */
+.redColor {
+  color: red !important;
+}
+
+@media screen and (max-width: 600px) {
+  .productListTable div {
+    font: 300 4vw "Roboto";
+  }
+
+  .productListTable .MuiDataGrid-columnHeaderTitle {
+    font: 500 5vw "Roboto";
+  }
+}

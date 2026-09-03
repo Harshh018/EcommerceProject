@@ -1,0 +1,96 @@
+.myOrdersPage {
+  width: 100%;
+  min-height: 60vh;
+  padding: 80px 5%;
+  box-sizing: border-box;
+}
+
+#myOrdersHeading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+.deleteOrderBtn {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+}
+
+.deleteOrderBtn:hover {
+  background-color: #c62828;
+}
+
+.ordersTable {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+}
+
+.ordersTableHeader,
+.ordersTableRow {
+  min-width: 850px;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 0.7fr;
+  align-items: center;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
+.ordersTableHeader {
+  font-weight: 600;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.ordersTableRow {
+  border-bottom: 1px solid #eee;
+  min-height: 65px;
+}
+
+.ordersTableRow:last-child {
+  border-bottom: none;
+}
+
+.orderId {
+  word-break: break-all;
+  font-size: 13px;
+}
+
+.greenColor {
+  color: green;
+  font-weight: 500;
+}
+
+.redColor {
+  color: red;
+  font-weight: 500;
+}
+
+.ordersTableRow a {
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+}
+
+.noOrders {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .myOrdersPage {
+    padding: 50px 15px;
+  }
+
+  #myOrdersHeading {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,38 @@
+/* =========================================================
+   SpeedDial / Profile Menu Styles
+   ========================================================= */
+
+.speedDial {
+  position: fixed;
+  right: 3vmax;
+  top: 3vmax;
+}
+
+.speedDialIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Overlay Navbar Styles (overlay-navbar package customization)
+   ========================================================= */
+
+/* Adjust default z-index so the navbar overlays content properly */
+.navUrl {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Mobile responsiveness adjustments */
+@media screen and (max-width: 600px) {
+  .speedDial {
+    top: 2vmax;
+    right: 2vmax;
+  }
+
+  .speedDialIcon {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,49 @@
+.PageNotFound {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PageNotFound > svg {
+  font-size: 7vmax !important;
+  color: tomato;
+}
+
+.PageNotFound > p {
+  font: 400 2vmax "Roboto", sans-serif;
+}
+
+.PageNotFound > a {
+  background-color: rgb(51, 51, 51);
+  color: white;
+  border: none;
+  padding: 1vmax 3vmax;
+  cursor: pointer;
+  font: 300 1vmax "Roboto", sans-serif;
+  text-decoration: none;
+  margin: 2vmax;
+}
+
+.PageNotFound > a:hover {
+  background-color: rgb(30, 30, 30);
+}
+
+@media screen and (max-width: 600px) {
+  .PageNotFound > svg {
+    font-size: 15vmax !important;
+  }
+
+  .PageNotFound > p {
+    font: 400 3vmax "Roboto", sans-serif;
+  }
+
+  .PageNotFound > a {
+    padding: 1.5vmax 4vmax;
+    font: 300 2vmax "Roboto", sans-serif;
+  }
+}

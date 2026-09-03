@@ -1,0 +1,30 @@
+.contactContainer {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.mailBtn {
+  text-decoration: none;
+}
+
+.mailBtn > button {
+  font: 400 1.2vmax "Roboto", sans-serif !important;
+  padding: 2vmax !important;
+  background-color: tomato !important;
+  color: white !important;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.mailBtn > button:hover {
+  background-color: rgb(200, 50, 50) !important;
+}
