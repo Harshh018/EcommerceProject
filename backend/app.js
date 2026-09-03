@@ -11,10 +11,9 @@ const path = require("path");
 const cors = require("cors");
 
 // Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({path:  "backend/config/config.env"});
- 
-}
+app.get("/*splat", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 // Enable CORS
 app.use(
