@@ -48,7 +48,7 @@ app.use("/api/v1", payment);
 // Serve Static Assets from React build directly
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
+app.get("/*splat", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
 });
 
