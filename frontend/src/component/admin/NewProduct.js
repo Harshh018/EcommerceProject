@@ -81,26 +81,47 @@ const NewProduct = ({ history }) => {
   };
 
   // Handle image selection
-  const createProductImagesChange = (e) => {
-    const files = Array.from(e.target.files);
+const createProductImagesChange = (e) => {
+  const files = Array.from(e.target.files);
 
-    setImages([]);
-    setImagesPreview([]);
+  setImages([]);
+  setImagesPreview([]);
 
-    files.forEach((file) => {
-      const reader = new FileReader();
+  files.forEach((file) => {
+    const reader = new FileReader();
 
-      reader.onload = () => {
-        if (reader.readyState === 2) {
-          setImagesPreview((old) => [...old, reader.result]);
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          const MAX_WIDTH = 800;
+          const scaleFactor = MAX_WIDTH / img.width;
 
-          setImages((old) => [...old, reader.result]);
-        }
-      };
+          if (scaleFactor < 1) {
+            canvas.width = MAX_WIDTH;
+            canvas.height = img.height * scaleFactor;
+          } else {
+            canvas.width = img.width;
+            canvas.height = img.height;
+          }
 
-      reader.readAsDataURL(file);
-    });
-  };
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+          // Compress image to 70% quality JPEG
+          const compressedBase64 = canvas.toDataURL("image/jpeg", 0.7);
+
+          setImagesPreview((old) => [...old, compressedBase64]);
+          setImages((old) => [...old, compressedBase64]);
+        };
+      }
+    };
+
+    reader.readAsDataURL(file);
+  });
+};
 
   return (
     <Fragment>

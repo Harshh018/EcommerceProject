@@ -118,8 +118,6 @@ export const getAdminProduct = () => async (dispatch) => {
 
 
 // CREATE PRODUCT
-
-
 export const createProduct = (productData) => async (dispatch) => {
   try {
     dispatch({ type: NEW_PRODUCT_REQUEST });
@@ -128,17 +126,17 @@ export const createProduct = (productData) => async (dispatch) => {
       headers: {
         "Content-Type": "application/json",
       },
+      timeout: 60000, // Crucial: prevents the browser from cutting off large image uploads
     };
 
-    // Replace relative path:
-// const { data } = await axios.post(`/api/v1/admin/product/new`, productData, config);
+    // Use relative path so it automatically connects to Render in production 
+    // and your local proxy during development
+    const { data } = await axios.post(
+      `/api/v1/admin/product/new`,
+      productData,
+      config
+    );
 
-// With full URL path:
-const { data } = await axios.post(
-  `http://localhost:4000/api/v1/admin/product/new`,
-  productData,
-  config
-);
     dispatch({
       type: NEW_PRODUCT_SUCCESS,
       payload: data,
@@ -146,7 +144,7 @@ const { data } = await axios.post(
   } catch (error) {
     dispatch({
       type: NEW_PRODUCT_FAIL,
-      payload: getErrorMessage(error),
+      payload: error.response?.data?.message || error.message,
     });
   }
 };
