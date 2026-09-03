@@ -1,19 +1,13 @@
 const express = require("express");
-
-const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-
-const errorMiddleware = require("./middleware/error");
-const dotenv = require("dotenv");
 const path = require("path");
 const cors = require("cors");
 
-// Config
-app.get("/*splat", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
+const errorMiddleware = require("./middleware/error");
+
+const app = express();
 
 // Enable CORS
 app.use(
@@ -48,11 +42,12 @@ app.use("/api/v1", payment);
 // Serve Static Assets from React build directly
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
+// Serve React App for all other unknown routes (MUST be after API routes)
 app.get("/*splat", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
 });
 
-// Middleware for error
+// Middleware for errors
 app.use(errorMiddleware);
 
 module.exports = app;
