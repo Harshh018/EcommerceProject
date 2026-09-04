@@ -6,7 +6,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 
 const About = () => {
   const visitInstagram = () => {
-    window.location = "https://instagram.com/meabhisingh";
+    window.location = "https://instagram.com/harshgupta8850";
   };
 
   return (
@@ -28,20 +28,20 @@ const About = () => {
               Visit Instagram
             </Button>
             <span>
-              This is a sample e-commerce website made by @meabhisingh solely for the purpose of teaching MERN Stack on 6 Pack Programmer.
+              This is a Ecommerce website which allow you to choose the best products
             </span>
           </div>
 
           <div className="aboutSectionContainer2">
             <Typography component="h2">Our Brands</Typography>
-            <a
+            {/* <a
               href="https://www.youtube.com/6packprogrammer"
               target="blank"
             >
               <YouTubeIcon className="youtubeSvgIcon" />
-            </a>
+            </a> */}
 
-            <a href="https://instagram.com/meabhisingh" target="blank">
+            <a href="https://instagram.com/harshgupta8850" target="blank">
               <InstagramIcon className="instagramSvgIcon" />
             </a>
           </div>

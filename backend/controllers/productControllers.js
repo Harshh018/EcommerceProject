@@ -42,10 +42,19 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 
 // GET ALL PRODUCTS
 // GET ALL PRODUCTS
+// GET ALL PRODUCTS
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     const resultPerPage = 8;
 
     const productCount = await Product.countDocuments();
+
+    // --- FIX FOR CATEGORY CASE-SENSITIVITY ---
+    if (req.query.category) {
+        req.query.category = {
+            $regex: new RegExp(`^${req.query.category}$`, "i"),
+        };
+    }
+    // ----------------------------------------
 
     const apiFeature = new ApiFeatures(
         Product.find(),
