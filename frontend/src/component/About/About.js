@@ -23,7 +23,7 @@ const About = () => {
               src="https://res.cloudinary.com/triplej/image/upload/v1633008670/avatars/portrait-placeholder_q4d0f6.jpg"
               alt="Founder"
             />
-            <Typography>Abhishek Singh</Typography>
+            <Typography>Harsh Gupta</Typography>
             <Button onClick={visitInstagram} color="primary">
               Visit Instagram
             </Button>
