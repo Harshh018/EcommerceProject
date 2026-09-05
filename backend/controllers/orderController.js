@@ -92,41 +92,37 @@ exports.getAllOrders=catchAsyncErrors(async(req,res,next)=>{
 
 
 // update order status
-exports.updateOrder=catchAsyncErrors(async(req,res,next)=>{
-    const order=await Order.find(req.params.id);
-       if(!order){
-        return next(new ErrorHandler("order not found with this id",404));
-
+// update order status
+exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
+    // FIX: Use findById instead of find so it returns a single document object
+    const order = await Order.findById(req.params.id);
+    
+    if (!order) {
+        return next(new ErrorHandler("Order not found with this id", 404));
     }
 
-    if(order.orderStatus==="Delivered"){
-        return next(new ErrorHandler("you have already delivered this order",400))
-    }
-  if(req.body.status==="Shipped"){
-        
-      order.orderItems.forEach(async(order)=>{
-          await updateStock(order.product,order.quantity);
-      });
+    if (order.orderStatus === "Delivered") {
+        return next(new ErrorHandler("You have already delivered this order", 400));
     }
 
-    order.orderStatus=req.body.status;
-
-    if(req,body.status === "Delivered"){
-    order.deliveredAt=Date.now()
+    if (req.body.status === "Shipped") {
+        order.orderItems.forEach(async (item) => {
+            await updateStock(item.product, item.quantity);
+        });
     }
 
-    if(req.body.status ==="Delivered"){
-        order.deliveredAt=Date.now()
+    order.orderStatus = req.body.status;
+
+    if (req.body.status === "Delivered") {
+        order.deliveredAt = Date.now();
     }
 
-    await order.save({validateBeforeSave:false})
+    await order.save({ validateBeforeSave: false });
 
     res.status(200).json({
-        success:true,
-       
-    })
+        success: true,
+    });
 });
-
 
 async function updateStock(id,quantity){
     const product = await Product.findById(id);
