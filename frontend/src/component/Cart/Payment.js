@@ -232,6 +232,7 @@ const Payment = ({ history }) => {
         "STRIPE PAYMENT RESPONSE:",
         data
       );
+      
 
       const client_secret =
         data.client_secret;
