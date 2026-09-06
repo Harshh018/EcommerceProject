@@ -9,8 +9,10 @@
     box-sizing: border-box;
 }
 
-/* ================= IMAGE SECTION ================= */
-/* ================= IMAGE SECTION ================= */
+
+/* =====================================================
+   IMAGE SECTION
+===================================================== */
 
 .ProductDetails > div:first-child {
     width: 50%;
@@ -20,24 +22,31 @@
     align-items: center;
     padding: 2vmax;
     box-sizing: border-box;
+    overflow: visible;
 }
 
+/* Material UI Carousel */
 .ProductDetails > div:first-child .Carousel {
     width: 100% !important;
-    max-width: 600px;
+    max-width: 600px !important;
 }
 
+/* Main Product Image */
 .CarouselImage {
-    width: auto !important;
-    max-width: 100% !important;
+    width: 400px !important;
     height: 500px !important;
+    max-width: none !important;
+    max-height: none !important;
     object-fit: contain !important;
     display: block !important;
-    margin: auto !important;
+    margin: 0 auto !important;
+    flex-shrink: 0 !important;
 }
 
 
-/* ================= DETAILS SECTION ================= */
+/* =====================================================
+   DETAILS SECTION
+===================================================== */
 
 .ProductDetails > div:last-child {
     width: 50%;
@@ -46,7 +55,9 @@
 }
 
 
-/* Product name */
+/* =====================================================
+   PRODUCT NAME
+===================================================== */
 
 .detailsBlock-1 > h2 {
     color: rgba(0, 0, 0, 0.65);
@@ -61,7 +72,9 @@
 }
 
 
-/* ================= RATING ================= */
+/* =====================================================
+   RATING
+===================================================== */
 
 .detailsBlock-2 {
     display: flex;
@@ -79,7 +92,9 @@
 }
 
 
-/* ================= PRICE ================= */
+/* =====================================================
+   PRICE
+===================================================== */
 
 .detailsBlock-3 > h1 {
     color: tomato;
@@ -94,7 +109,9 @@
 }
 
 
-/* ================= QUANTITY ================= */
+/* =====================================================
+   QUANTITY
+===================================================== */
 
 .detailsBlock-3-1-1 {
     display: flex;
@@ -128,7 +145,9 @@
 }
 
 
-/* ================= ADD TO CART ================= */
+/* =====================================================
+   ADD TO CART
+===================================================== */
 
 .detailsBlock-3-1 > button {
     border: none;
@@ -151,7 +170,9 @@
 }
 
 
-/* ================= STOCK ================= */
+/* =====================================================
+   STOCK
+===================================================== */
 
 .detailsBlock-3 > p {
     border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -175,7 +196,9 @@
 }
 
 
-/* ================= DESCRIPTION ================= */
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 .detailsBlock-4 {
     color: rgba(0, 0, 0, 0.75);
@@ -191,7 +214,9 @@
 }
 
 
-/* ================= REVIEW BUTTON ================= */
+/* =====================================================
+   REVIEW BUTTON
+===================================================== */
 
 .submitReview {
     border: none;
@@ -209,7 +234,9 @@
 }
 
 
-/* ================= REVIEWS ================= */
+/* =====================================================
+   REVIEWS
+===================================================== */
 
 .reviewsHeading {
     text-align: center;
@@ -236,7 +263,9 @@
 }
 
 
-/* ================= REVIEW DIALOG ================= */
+/* =====================================================
+   REVIEW DIALOG
+===================================================== */
 
 .submitDialog {
     display: flex;
@@ -257,7 +286,9 @@
 }
 
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media screen and (max-width: 900px) {
 
@@ -266,11 +297,12 @@
     }
 
     .ProductDetails > div:first-child {
-        min-height: 450px;
+        min-height: 500px;
     }
 
     .CarouselImage {
-        height: 400px;
+        width: 350px !important;
+        height: 450px !important;
     }
 
     .detailsBlock-1 > h2 {
@@ -280,9 +312,12 @@
     .detailsBlock-3 > h1 {
         font-size: 3vmax;
     }
-
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media screen and (max-width: 600px) {
 
@@ -292,6 +327,7 @@
     }
 
     /* Image section */
+
     .ProductDetails > div:first-child {
         width: 100%;
         min-height: auto;
@@ -299,15 +335,19 @@
     }
 
     .ProductDetails > div:first-child .Carousel {
-        width: 100%;
+        width: 100% !important;
     }
 
     .CarouselImage {
-        width: 100%;
-        height: 350px;
+        width: 300px !important;
+        height: 350px !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
     }
 
+
     /* Details section */
+
     .ProductDetails > div:last-child {
         width: 100%;
         padding: 2vmax;
@@ -329,6 +369,9 @@
         font-size: 5vmax;
     }
 
+
+    /* Quantity */
+
     .detailsBlock-3-1-1 > button {
         width: 7vmax;
         height: 7vmax;
@@ -341,14 +384,23 @@
         font-size: 2.5vmax;
     }
 
+
+    /* Add to cart */
+
     .detailsBlock-3-1 > button {
         padding: 2vmax 3vmax;
         font-size: 2vmax;
     }
 
+
+    /* Stock */
+
     .detailsBlock-3 > p {
         font-size: 2.5vmax;
     }
+
+
+    /* Description */
 
     .detailsBlock-4 {
         font-size: 3vmax;
@@ -357,6 +409,9 @@
     .detailsBlock-4 > p {
         font-size: 2.2vmax;
     }
+
+
+    /* Review */
 
     .submitReview {
         padding: 2vmax 4vmax;
