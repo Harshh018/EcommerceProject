@@ -2,14 +2,16 @@
   background-color: rgb(255, 255, 255);
   width: 100vw;
   max-width: 100%;
-  padding: 6vmax;
+  padding: 4vmax;
   box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
 }
 
-/* Left container box holding the carousel */
+/* Left container box holding the carousel (fixed height keeps the border neat and uniform) */
 .ProductDetails > div:first-child {
-  width: 100%;
+  width: 50%;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +21,18 @@
   border: 1px solid rgba(0, 0, 0, 0.075);
 }
 
-/* Force Carousel wrappers to fill the container properly */
+/* Right container box for product details */
+.ProductDetails > div:last-child {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2vmax;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+}
+
+/* Force Carousel wrappers and Material-UI elements to fill the left box container */
 .ProductDetails .Carousel,
 .ProductDetails div[role="region"],
 .ProductDetails .MuiPaper-root {
@@ -32,19 +45,16 @@
   background-color: transparent !important;
 }
 
-/* Force the product images to expand and display at full size */
+/* Scale the image to fill the container space cleanly without breaking its border */
 .ProductDetails img,
 .CarouselImage {
   width: 100% !important;
-  max-width: 400px !important;
-  height: 450px !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: contain !important;
   display: block !important;
   margin: auto !important;
-}
-
-.ProductDetails > div:last-child {
-  align-items: flex-start;
 }
 
 .detailsBlock-1 > h2 {
@@ -236,13 +246,15 @@
     height: unset;
   }
 
+  .ProductDetails > div:first-child,
   .ProductDetails > div:last-child {
-    align-items: center;
+    width: 100%;
+    height: auto;
   }
 
   .CarouselImage {
-    width: 60vw !important;
-    height: 60vw !important;
+    width: 100% !important;
+    height: 350px !important;
   }
 
   .detailsBlock-1 > h2 {
