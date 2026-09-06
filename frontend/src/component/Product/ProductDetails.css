@@ -10,11 +10,9 @@
 }
 
 /* ================= IMAGE SECTION ================= */
-/* =========================================
-   PRODUCT IMAGE SECTION
-========================================= */
+/* ================= IMAGE SECTION ================= */
 
-.productImageSection {
+.ProductDetails > div:first-child {
     width: 50%;
     min-height: 600px;
     display: flex;
@@ -24,33 +22,18 @@
     box-sizing: border-box;
 }
 
-.productImageCarousel {
-    width: 100%;
-    max-width: 600px;
-    height: 550px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Carousel itself */
-.productImageCarousel .Carousel {
+.ProductDetails > div:first-child .Carousel {
     width: 100% !important;
-    height: 550px !important;
+    max-width: 600px;
 }
 
-/* Product image */
-.productImageCarousel .CarouselImage {
+.CarouselImage {
     width: auto !important;
     max-width: 100% !important;
     height: 500px !important;
     object-fit: contain !important;
     display: block !important;
-    margin: 0 auto !important;
-}
-.productImageCarousel img {
-    max-height: 500px !important;
-    max-width: 100% !important;
+    margin: auto !important;
 }
 
 
