@@ -10,9 +10,13 @@
 }
 
 /* ================= IMAGE SECTION ================= */
-.ProductDetails > div:first-child {
+/* =========================================
+   PRODUCT IMAGE SECTION
+========================================= */
+
+.productImageSection {
     width: 50%;
-    min-height: 550px;
+    min-height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,18 +24,33 @@
     box-sizing: border-box;
 }
 
-.ProductDetails > div:first-child .Carousel {
+.productImageCarousel {
     width: 100%;
-    max-width: 650px;
+    max-width: 600px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Main Product Image */
-.CarouselImage {
-    width: 100%;
-    height: 500px;
-    object-fit: contain;   /* CHANGE cover → contain */
-    display: block;
-    margin: auto;
+/* Carousel itself */
+.productImageCarousel .Carousel {
+    width: 100% !important;
+    height: 550px !important;
+}
+
+/* Product image */
+.productImageCarousel .CarouselImage {
+    width: auto !important;
+    max-width: 100% !important;
+    height: 500px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+.productImageCarousel img {
+    max-height: 500px !important;
+    max-width: 100% !important;
 }
 
 

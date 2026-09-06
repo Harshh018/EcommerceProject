@@ -151,19 +151,21 @@ const ProductDetails = ({ match }) => {
           <div className="ProductDetails">
 
             {/* ================= IMAGE SECTION ================= */}
-            <div>
-           <Carousel>
-  {product.images &&
-    product.images.map((item, i) => (
-      <img
-        className="CarouselImage"
-        key={item.url || i}
-        src={item.url}
-        alt={`${i} Slide`}
-      />
-    ))}
-</Carousel>
-            </div>
+          <div className="productImageSection">
+    <div className="productImageCarousel">
+        <Carousel>
+            {product.images &&
+                product.images.map((item, i) => (
+                    <img
+                        className="CarouselImage"
+                        key={item.url || i}
+                        src={item.url}
+                        alt={`${i} Slide`}
+                    />
+                ))}
+        </Carousel>
+    </div>
+</div>
 
             {/* ================= DETAILS SECTION ================= */}
             <div>
