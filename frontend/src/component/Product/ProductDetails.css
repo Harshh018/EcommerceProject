@@ -30,7 +30,7 @@
 .CarouselImage {
     width: 100%;
     height: 500px;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
     margin: auto;
 }
