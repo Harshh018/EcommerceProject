@@ -8,7 +8,7 @@
 }
 
 /* Left container box holding the carousel */
-.ProductDetails > div {
+.ProductDetails > div:first-child {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,39 +18,12 @@
   box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, 0.075);
 }
-/* Force images inside carousel to expand */
-.ProductDetails img,
-.CarouselImage {
-  width: 20vmax !important;
-  height: 25vmax !important;
-  max-width: 100% !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: auto !important;
-}
 
-/* Force carousel wrappers to take width */
+/* Force Carousel wrappers to fill the container properly */
 .ProductDetails .Carousel,
-.ProductDetails div[role="region"] {
-  width: 100% !important;
-}
-
-/* Fix React Material-UI Carousel internal wrapper width collapsing */
-.ProductDetails .MuiPaper-root,
-.ProductDetails div[class*="Carousel"],
-.ProductDetails .Carousel {
-  width: 100% !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Force image dimension scaling */
-/* Force the image to scale up and fill the left panel */
-/* Override Material-UI Carousel inner wrapper elements */
+.ProductDetails div[role="region"],
 .ProductDetails .MuiPaper-root {
   width: 100% !important;
-  max-width: 100% !important;
   height: 100% !important;
   display: flex !important;
   justify-content: center !important;
@@ -59,18 +32,15 @@
   background-color: transparent !important;
 }
 
-.ProductDetails div[role="region"] {
-  width: 100% !important;
-}
-
-/* Force image to expand to fill the left box */
+/* Force the product images to expand and display at full size */
+.ProductDetails img,
 .CarouselImage {
-  width: 30vmax !important;
-  height: 35vmax !important;
-  max-width: 100% !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  height: 450px !important;
   object-fit: contain !important;
   display: block !important;
-  margin: 0 auto !important;
+  margin: auto !important;
 }
 
 .ProductDetails > div:last-child {
